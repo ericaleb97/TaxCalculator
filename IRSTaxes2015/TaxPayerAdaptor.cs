@@ -11,8 +11,9 @@ namespace IRSTaxes2015
 {
     public class TaxPayerAdaptor
     {
-        private static string sqlConn = "Data Source=DESKTOP-H72S0DN\\SQLINSTALL_1;Initial Catalog=IRS_Data_2015;Integrated Security=True";
-        
+        //private static string sqlConn = "Data Source=DESKTOP-H72S0DN\\SQLINSTALL_1;Initial Catalog=IRS_Data_2015;Integrated Security=True";
+        private static string sqlConn = "Data Source=NVP-WK44\\DONNYINSTANCE;Initial Catalog=IRS_Data_2015;Integrated Security=True";
+
         /// <summary>
         /// Inserts a single Taxpayer object into the database
         /// </summary>
@@ -169,13 +170,15 @@ namespace IRSTaxes2015
         {
             Taxpayer payer = new Taxpayer();
 
+            
+
             try
             {
                 payer.Name = reader.GetString(reader.GetOrdinal("Name"));
-                payer.SSN = reader.GetString(reader.GetOrdinal("SSN"));
-                payer.salary = reader.GetDouble(reader.GetOrdinal("Salary"));
-                payer.tax = reader.GetDouble(reader.GetOrdinal("Tax_Owed"));
-                payer.taxedSalary = reader.GetDouble(reader.GetOrdinal("Taxed_Salary"));
+                payer.SSN = reader.GetInt32(reader.GetOrdinal("SSN")).ToString();
+                payer.salary = Double.Parse(reader.GetDecimal(reader.GetOrdinal("Salary")).ToString());
+                payer.tax = Double.Parse(reader.GetDecimal(reader.GetOrdinal("Tax_Owed")).ToString());
+                payer.taxedSalary = Double.Parse(reader.GetDecimal(reader.GetOrdinal("Taxed_Salary")).ToString());
             }
             catch (Exception ex)
             {
