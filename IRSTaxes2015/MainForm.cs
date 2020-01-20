@@ -101,9 +101,14 @@ namespace IRSTaxes2015
 
         private void search_Click(object sender, EventArgs e)
         {
-            var payer = new Taxpayer();
-            payer.SSN = searchSSN.Text;
-            TaxPayerAdaptor.SelectSingleRecord(payer.SSN);
+            var payer = TaxPayerAdaptor.SelectSingleRecord(searchSSN.Text); 
+
+            SSN.Text = payer.SSN;
+            name.Text = payer.Name;
+            userSalary.Text = payer.salary.ToString();
+            taxOwed.Text = payer.tax.ToString();
+            taxedSalary.Text = payer.taxedSalary.ToString();
+            searchSSN.Text = String.Empty;
         }
 
         private void Clear_Click(object sender, EventArgs e)
