@@ -13,9 +13,11 @@ namespace IRSTaxes2015
 {
     public partial class MainForm : Form
     {
+        Taxpayer _payer;
 
         public MainForm(Taxpayer payer)
         {
+            _payer = payer;
             InitializeComponent();
         }
 
@@ -30,22 +32,22 @@ namespace IRSTaxes2015
             {
                 double salary = Convert.ToDouble(userSalary.Text);
                 double tax = 0;
-
+                
                 var payer = new Taxpayer(salary);
 
-                if (payer.FilingType == Taxpayer.filing.Single)
+                if (_payer.FilingType == Taxpayer.filing.Single)
                 {
                     taxOwed.Text = payer.CalculateTax().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
-                else if (payer.FilingType == Taxpayer.filing.Head)
+                else if (_payer.FilingType == Taxpayer.filing.Head)
                 {
                     taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
-                else if (payer.FilingType == Taxpayer.filing.Jointly)
+                else if (_payer.FilingType == Taxpayer.filing.Jointly)
                 {
                     taxOwed.Text = payer.CalculateHeadOfHouseHold().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
