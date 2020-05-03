@@ -43,18 +43,35 @@ namespace IRSTaxes2015
 
                 else if (_payer.FilingType == Taxpayer.filing.Head)
                 {
-                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString();
+                    taxOwed.Text = payer.CalculateHeadOfHouseHold().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
                 else if (_payer.FilingType == Taxpayer.filing.Jointly)
                 {
-                    taxOwed.Text = payer.CalculateHeadOfHouseHold().ToString();
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
+
+                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Widower)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString(); //Same brackets as Married Filing Jointly//
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
             }
         }
 
+        /// <summary>
+        /// When updating a user, first select the type of status; single, married filing jointly, etc,
+        /// then either fill in the information or search them using the SSN search and hit update.
+        /// </summary>
         private void update_Click(object sender, EventArgs e)
         {
 
@@ -69,8 +86,37 @@ namespace IRSTaxes2015
                 double tax = 0;
 
                 var payer = new Taxpayer(salary);
-                taxOwed.Text = payer.CalculateTax().ToString();
-                taxedSalary.Text = payer.remainingSalary().ToString();
+
+                if (_payer.FilingType == Taxpayer.filing.Single)
+                {
+                    taxOwed.Text = payer.CalculateTax().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Head)
+                {
+                    taxOwed.Text = payer.CalculateHeadOfHouseHold().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Jointly)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Widower)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString(); //Same brackets as Married Filing Jointly//
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
                 payer.SSN = SSN.Text;
                 payer.Name = name.Text;
 
@@ -91,8 +137,36 @@ namespace IRSTaxes2015
                 double tax = 0;
 
                 var payer = new Taxpayer(salary);
-                taxOwed.Text = payer.CalculateTax().ToString();
-                taxedSalary.Text = payer.remainingSalary().ToString();
+
+                if (_payer.FilingType == Taxpayer.filing.Single)
+                {
+                    taxOwed.Text = payer.CalculateTax().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Head)
+                {
+                    taxOwed.Text = payer.CalculateHeadOfHouseHold().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Jointly)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
+
+                else if (_payer.FilingType == Taxpayer.filing.Widower)
+                {
+                    taxOwed.Text = payer.CalculateMarriedFilingJointly().ToString(); //Same brackets as Married Filing Jointly//
+                    taxedSalary.Text = payer.remainingSalary().ToString();
+                }
 
                 payer.SSN = SSN.Text;
                 payer.Name = name.Text;

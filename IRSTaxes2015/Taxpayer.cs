@@ -86,17 +86,17 @@ namespace IRSTaxes2015
 
         public double CalculateHeadOfHouseHold()
         {
-            if (0 <= salary && salary < 13150)
+            if (0 <= salary && salary <= 13150)
                 tax = salary * 0.10;
-            else if (13150 <= salary && salary < 50200)
+            else if (13151 <= salary && salary <= 50200)
                 tax = 1315 + ((salary - 13150) * 0.15);
-            else if (50200 <= salary && salary < 129600)
+            else if (50201 <= salary && salary <= 129600)
                 tax = 6872.5 + ((salary - 50200) * 0.25);
-            else if (129600 <= salary && salary < 209850)
+            else if (129601 <= salary && salary <= 209850)
                 tax = 26722.5 + ((salary - 129600) * 0.28);
-            else if (209850 <= salary && salary < 411500)
+            else if (209851 <= salary && salary <= 411500)
                 tax = 49192.5 + ((salary - 209850) * 0.33);
-            else if (411500 <= salary && salary < 439000)
+            else if (411501 <= salary && salary <= 439000)
                 tax = 115737 + ((salary - 411500) * 0.35);
             else
                 tax = 125362 + ((salary - 439000) * 0.396);
@@ -106,20 +106,40 @@ namespace IRSTaxes2015
         public double CalculateMarriedFilingJointly()
         {
 
-            if (0 <= salary && salary < 18450)
+            if (0 <= salary && salary <= 18450)
                 tax = salary * 0.10;
-            else if (18450 <= salary && salary < 74900)
+            else if (18451 <= salary && salary <= 74900)
                 tax = 1845 + ((salary - 18450) * 0.15);
-            else if (74900 <= salary && salary < 151200)
+            else if (74901 <= salary && salary <= 151200)
                 tax = 10312.5 + ((salary - 74900) * 0.25);
-            else if (151200 <= salary && salary < 230450)
+            else if (151201 <= salary && salary <= 230450)
                 tax = 29387.5 + ((salary - 151200) * 0.28);
-            else if (230450 <= salary && salary < 411500)
+            else if (230451 <= salary && salary <= 411500)
                 tax = 51577.5 + ((salary - 230450) * 0.33);
-            else if (411500 <= salary && salary < 464850)
+            else if (411501 <= salary && salary <= 464850)
                 tax = 111324 + ((salary - 411500) * 0.35);
             else
                 tax = 129996.5 + ((salary - 464850) * 0.396);
+            return tax;
+        }
+
+        public double CalculateMarriedFilingSeparately()
+        {
+
+            if (0 <= salary && salary <= 9225)
+                tax = salary * 0.10;
+            else if (9226 <= salary && salary <= 37450)
+                tax = 922.50 + ((salary - 9225) * 0.15);
+            else if (37451 <= salary && salary <= 75600)
+                tax = 5156.25 + ((salary - 37450) * 0.25);
+            else if (75601 <= salary && salary <= 115225)
+                tax = 14693.75 + ((salary - 75600) * 0.28);
+            else if (115226 <= salary && salary <= 205750)
+                tax = 25788.75 + ((salary - 115225) * 0.33);
+            else if (205751 <= salary && salary <= 232425)
+                tax = 55662 + ((salary - 205750) * 0.35);
+            else
+                tax = 64998.25 + ((salary - 464850) * 0.396);
             return tax;
         }
 

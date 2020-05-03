@@ -12,7 +12,6 @@ namespace IRSTaxes2015
     public class TaxPayerAdaptor
     {
         private static string sqlConn = "Data Source=DESKTOP-H72S0DN\\SQLINSTALL_1;Initial Catalog=IRS_Data_2015;Integrated Security=True";
-        //private static string sqlConn = "Data Source=NVP-WK44\\DONNYINSTANCE;Initial Catalog=IRS_Data_2015;Integrated Security=True";
 
         /// <summary>
         /// Inserts a single Taxpayer object into the database
