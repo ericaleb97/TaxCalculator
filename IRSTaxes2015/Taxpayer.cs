@@ -35,7 +35,7 @@ namespace IRSTaxes2015
             Single,
             Head,
             Jointly,
-            Seperately,
+            Separately,
             Widower
         }
 

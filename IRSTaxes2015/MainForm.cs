@@ -53,7 +53,7 @@ namespace IRSTaxes2015
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
-                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                else if (_payer.FilingType == Taxpayer.filing.Separately)
                 {
                     taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
@@ -105,7 +105,7 @@ namespace IRSTaxes2015
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
-                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                else if (_payer.FilingType == Taxpayer.filing.Separately)
                 {
                     taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
@@ -156,7 +156,7 @@ namespace IRSTaxes2015
                     taxedSalary.Text = payer.remainingSalary().ToString();
                 }
 
-                else if (_payer.FilingType == Taxpayer.filing.Seperately)
+                else if (_payer.FilingType == Taxpayer.filing.Separately)
                 {
                     taxOwed.Text = payer.CalculateMarriedFilingSeparately().ToString();
                     taxedSalary.Text = payer.remainingSalary().ToString();
