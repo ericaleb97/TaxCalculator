@@ -20,11 +20,19 @@ If we'd like to enter this data into our database, we need to select the Submit 
 ### Update
 If we wish to update the user's filing status, we first must go through the first form, select the desired status, then enter in any new data (or re-enter the old data) and hit update.
 
-*Note*
+*Note:*
 
 *If a new SSN or the old SSN is not included, the record will not be updated.*
 
 *Also, while still in the second window, any yearly salary entered will still be taxed according the previously selected status from the drop down menu.*
+
+### Clear
+This button will clear any data inside the text boxes.
+
+### Delete
+If we want to delete an entire user from our database, we first must enter their SSN, then hit the Delete button.
+
+The program will issue a warning, asking us if we wish to continue with the action, giving us the option to select Yes or No.
 
 ## Prerequisites
 
