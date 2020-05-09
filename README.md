@@ -10,12 +10,14 @@ Hit the Enter button, and now we will see the second, navy colored form appear.
 Let's try creating a user in our database; we'll call him John Doe. We need to give him an SSN and a yearly salary.
 For simplicity sake, his social will be 111-11-1111 and he will make $56,000.
 
+### Calculate
 Select the Calculate button, and watch the magic take place as the code calculates how much money John will owe at the end of the year.
 The tax owed will be $14,294. Following suit, the Taxed Salary will populate an answer by subtracting the amount of tax owed from John's total salary. The value will be $59,706.
 
-If we'd like to enter this data into our database, we need to select the Enter button, and we will get a message that says, "The record was entered into the database". If it fails, we will see, "The data was not entered into the database".
+### Submit
+If we'd like to enter this data into our database, we need to select the Submit button, and we will get a message that says, "The record was entered into the database". If it fails, we will see, "The data was not entered into the database".
 
-
+### Update
 
 ## Prerequisites
 
