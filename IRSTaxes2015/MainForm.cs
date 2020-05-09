@@ -75,7 +75,7 @@ namespace IRSTaxes2015
         private void update_Click(object sender, EventArgs e)
         {
 
-            if (userSalary.Text.Length == 0)
+            if (SSN.Text.Length == 0 || userSalary.Text.Length == 0)
             {
                 MessageBox.Show("Please enter the user data before updating");
             }
@@ -126,9 +126,9 @@ namespace IRSTaxes2015
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (SSN.Text.Length == 0)
+            if (userSalary.Text.Length == 0)
             {
-                MessageBox.Show("Please enter the user data before updating");
+                MessageBox.Show("Please enter the user data before submitting");
             }
 
             else
