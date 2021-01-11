@@ -40,7 +40,7 @@ The program will issue a warning, asking us if we wish to continue with the acti
 
 * Internet connection
 
-* Visual Studios 2012 v 11.0
+* Visual Studio 2012 v 11.0
 
 * MS SQL Server 2012 v 11.0
 
